@@ -36,7 +36,9 @@ class handler(BaseHTTPRequestHandler):
 			country_name = data[0]["name"]["official"]
 			message = str(f'{capital} is the capital of {country_name}')
 		else:
-			message = str('Please enter a country or capital in the url.')
+			message = str('Please enter a country or capital in the url in '
+						  'the format of "?country=<country>" or '
+						  '"?capital=<capital>" (without the quotes).')
 
 		self.send_response(200)
 		self.send_header('Content-type', 'text/plain')
